@@ -1,0 +1,16 @@
+services:
+  wolfy:
+    build: .
+    image: wolfy-wave-index:latest
+    container_name: wolfy-wave-index
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+
+
+
+
+
+
+
