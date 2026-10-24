@@ -74,6 +74,14 @@ python3 -m http.server 8080
 
 纯静态，无构建步骤。GitHub Pages：Settings → Pages → `main` 分支根目录即可（仓库已含 `.nojekyll`）。
 
+Docker 一键部署（需已安装 Docker）：
+
+```
+git clone https://github.com/geekqq/wolfy-wave-index.git && cd wolfy-wave-index && docker compose up -d --build
+```
+
+启动后打开 http://localhost:8080 ；已设置自动重启，可 24×7 运行。停止：`docker compose down`。更多说明见 [DEPLOY.md](DEPLOY.md)。
+
 ## 调整参数
 
 全部集中在 [js/config.js](js/config.js)：周期常量（`HALVING_INTERVAL`、`WAVE_BULL_HALF`）、分桶粒度（`BLOCK_BUCKETS`）、枢轴搜索窗口（`PIVOT_WINDOWS`，顶底由实际行情自动算出、不硬编码日期）、狼波色谱（`WAVE_COLOR_STOPS`）与两套主题配色（`THEMES`）。
@@ -161,6 +169,14 @@ Opening index.html via `file://` won't work (local data files can't be fetched).
 ## Deploy
 
 Static, no build. GitHub Pages: Settings → Pages → `main` branch, root (`.nojekyll` included).
+
+One-click Docker deploy (requires Docker):
+
+```
+git clone https://github.com/geekqq/wolfy-wave-index.git && cd wolfy-wave-index && docker compose up -d --build
+```
+
+Then open http://localhost:8080. Auto-restart is enabled for 24×7 running. Stop with `docker compose down`. See [DEPLOY.md](DEPLOY.md) for details.
 
 ## Configuration
 
